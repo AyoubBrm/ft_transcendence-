@@ -1,0 +1,312 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.tournament-frame {
+    background-color: #1e1e1e; /* Darker frame background */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 1200px;
+    height: 800px;
+    max-width: 90%;
+}
+
+h1 {
+    text-align: center;
+    color: #ff9800; /* Bright title color */
+    margin-bottom: 20px;
+}
+
+.tournament-bracket {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.round {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.match {
+    background-color: #2c2c2c; /* Match background */
+    border: 1px solid #444; /* Match border */
+    border-radius: 4px;
+    padding: 10px;
+    margin: 100px;
+    width: 150px;
+    transition: background-color 0.3s;
+}
+
+.match:hover {
+    background-color: #3a3a3a; /* Match hover effect */
+}
+
+.winner {
+    font-weight: bold;
+    background-color: #4caf50; /* Winner background */
+    color: #fff; /* Winner text color */
+}
+
+.player1 {
+    padding: 5px;
+    margin: 10px 0; /* Increased vertical margin for spacing */
+    background-color: #3f3f3f; /* Player background */
+    border-radius: 3px;
+    text-align: center;
+}
+
+.player2 {
+    padding: 5px;
+    margin: 10px 0; /* Increased vertical margin for spacing */
+    background-color: #3f3f3f; /* Player background */
+    border-radius: 3px;
+    text-align: center;
+}
+
+.player3 {
+    padding: 5px;
+    margin: 10px 0; /* Increased vertical margin for spacing */
+    background-color: #3f3f3f; /* Player background */
+    border-radius: 3px;
+    text-align: center;
+}
+
+.player4 {
+    padding: 5px;
+    margin: 10px 0; /* Increased vertical margin for spacing */
+    background-color: #3f3f3f; /* Player background */
+    border-radius: 3px;
+    text-align: center;
+}
+
+.winner1 {
+    padding: 5px;
+    margin: 10px 0; /* Increased vertical margin for spacing */
+    background-color: #3f3f3f; /* Player background */
+    border-radius: 3px;
+    text-align: center;
+}
+
+
+.winner2 {
+    padding: 5px;
+    margin: 10px 0; /* Increased vertical margin for spacing */
+    background-color: #3f3f3f; /* Player background */
+    border-radius: 3px;
+    text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e1e1e; /* Full-page background color */
+  height: 100vh;
+  overflow: hidden;
+}
+
+#header {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  color: #ffffff;
+  background-color: #333333; /* Background color for the score and player names */
+}
+
+#score-board {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+#game-container {
+  width: 800px;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  /* border-radius: 50px; */
+  background-color: #222222;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#player1-name,
+#player2-name {
+  margin: 0 10px; /* Adjust the horizontal margin as needed */
+}
+
+#score1,
+#score2 {
+  margin: 0 100px; /* Adjust the horizontal margin as needed */
+}
+
+#timer {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: bold; /* Make timer text bold */
+  margin: 10px 0; /* Space between timer and scores */
+}
+
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+  background-color: #eac646;
+  /* margin: 15% auto;  */
+  height: 10%;
+  padding: 20px;
+  border: 1px solid #000000;
+  width: 80%; 
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.countdown {
+  font-size: 120px;
+  color: white;
+  text-align: center;
+  animation: countdownAnimation 3s linear forwards;
+  opacity: 1;
+}
+
+.display_waiting{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+}
+
+.register-btn {
+  z-index: 1000;
+	display: flex;
+	justify-content: center;       /* Center horizontally */
+	align-items: center;           /* Center vertically */
+	flex-direction: column;  
+	border-radius: 25px;
+	background-color: rgb(64, 64, 64);
+	width: 400px;
+	height: 150px;
+	padding: 20px;                 /* Optional: adds some padding inside */
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow for a subtle lift */
+	border: 2px solid #ffffff63;
+  gap: 10px;
+}
+
+.Annancement {
+	color: rgb(255, 255, 255);
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	text-align: center;           /* Center text within the element */
+	font-size: 1.2rem;             /* Optional: adjust font size */
+}
+
+.player_in_queue{
+	display: flex;
+	margin :10px;
+	width: 90%;
+	height: 50px;
+	border-radius: 10px;
+	background-color: rgb(28, 28, 28);
+	gap:5px;
+}
+
+.players_in{
+	display: flex;
+	height: 50px;
+	width: 25%;
+	background-color: black;
+	border-radius: 5px;
+	border: 0.5px solid rgb(255, 242, 0);
+	transition: all 0.2s ease-in-out;
+}
+.players_in.active{
+	box-shadow: inset 0px 0px 10px rgb(255, 200, 0), 0px 0px 10px rgb(255, 200, 0);
+	background-color:  rgb(255, 242, 0);
+}
+
+.cancel_waiting{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgb(181, 66, 53);
+  width: 60px;
+  height: 40px;
+  font-size: medium;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #531313;
+  border-radius: 10px;
+}
+.cancel_waiting:hover{
+  color: #ffffff;
+  background-color:  rgb(181, 66, 53);
+}
+@keyframes countdownAnimation {
+  0% {
+      transform: scale(0.5);
+      opacity: 0;
+  }
+  10% {
+      transform: scale(1.2);
+      opacity: 1;
+  }
+  20% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  90% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(0.5);
+      opacity: 0;
+  }
+}

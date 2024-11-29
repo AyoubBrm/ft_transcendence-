@@ -1,0 +1,17 @@
+body{
+	background-color:black;
+	display: flex;
+	align-content: end;
+}
+
+.messanger {
+    position: fixed; /* Fixes the div at a specific position on the viewport */
+    /* bottom: 20px;    Positions the div 20px from the bottom */
+    /* right: 20px;     Positions the div 20px from the right */
+    width: 300px;    /* Sets a width for the messenger box */
+    height: 400px;   /* Sets a height for the messenger box */
+    background-color: white; /* Background color for the messenger */
+    border-radius: 10px;     /* Rounds the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for a 3D effect */
+    overflow: hidden; /* Ensures content stays within the box */
+}
